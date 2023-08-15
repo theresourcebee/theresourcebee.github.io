@@ -14,7 +14,7 @@ class Homepage extends Component {
     if (!this.props.data) return null;
 
     return (
-      <section id="resume">
+      <section id="services">
         <div className="education-container">
           <div className="row education">
             <div className="twelve columns header-col">
