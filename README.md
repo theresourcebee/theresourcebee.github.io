@@ -1,49 +1,70 @@
-# New Age Jekyll theme
-=========================
+# Getting Started with Create React App
 
-# The project is no longer maintained
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## If you are a company and you're going to use the blog: 
-1. contact bootstrap start up and ask.
-2. contact me because there is to remove some useless part.
+## Available Scripts
 
-Jekyll theme based on [New Age bootstrap theme ](https://startbootstrap.com/template-overviews/new-age/)
+In the project directory, you can run:
 
-# Demo
-View this jekyll theme in action [here](https://jekynewage.github.io/)
+### `npm start`
 
-## Built by
-[Antonio Trento](https://it.linkedin.com/in/antoniotrento)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-This Jekyll template was created to develop, landing pages, squeeze pages, portfolio and blog or all the above.
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### I integrated analytical tools and marketing such as:
-- Google Ad Words
-- Google analytics
-- Disqus comment system
-- Add This social sharing
+### `npm test`
 
->>External stylesheets and libraries included are Google Fonts, Font Awesome, Normalize.CSS, and WOW.js
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-In order to set your log data to applications _config.yml just open the file and find the associated items.
+### `npm run build`
 
-I also built a system to add their own names on the same company files
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-**To change the base colors yellow go in css folder there main.css where you can set the primary color and the secondary color, remember that the theme is gradient in the background areas**
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-If you are interested in implementing this theme please contact me without any problems I will do what is in my power to help you!
+### `npm run eject`
 
-If you have noticed anything unusual or errors in my development I ask you kindly let me know or send a pull request!
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-Any opinion and critical comment is welcome! So give us inside!
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-We can get in touch by:
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-1. By <a href="https://twitter.com/lantoniotrento">twitter</a>
-2. mail <a href="mailto:lantoniotrento@gmail.com">lantoniotrento[at]gmail.com</a>
-3. Via <a href="https://it.linkedin.com/in/antoniotrento">LinkedIn</a>
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-=========
+## Learn More
 
-For more details, read the [documentation](http://jekyllrb.com/)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
