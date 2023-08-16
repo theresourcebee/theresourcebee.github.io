@@ -1,38 +1,38 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+import { appData as initialAppData } from "../data/appData";
 
-class Testimonials extends Component {
-  render() {
-    if (!this.props.data) return null;
+function Testimonials(props) {
+  // eslint-disable-next-line
+  const [appData, setAppData] = useState(initialAppData);
 
-    const testimonials = this.props.data.testimonials.map(function(testimonials) {
-      return (
-        <li key={testimonials.user}>
-          <blockquote>
-            <p>{testimonials.text}</p>
-            <cite>{testimonials.user}</cite>
-          </blockquote>
-        </li>
-      );
-    });
-
+  const testimonials = appData?.testimonials.map(function (testimonial) {
     return (
-      <section id="testimonials">
-        <div className="text-container">
-          <div className="row">
-            <div className="two columns header-col">
-              <h1>
-                <span>Client Testimonials</span>
-              </h1>
-            </div>
+      <li key={testimonial.user}>
+        <blockquote>
+          <p>{testimonial.text}</p>
+          <cite>{testimonial.user}</cite>
+        </blockquote>
+      </li>
+    );
+  });
 
-            <div className="ten columns flex-container">
-              <ul className="slides">{testimonials}</ul>
-            </div>
+  return (
+    <section id="testimonials">
+      <div className="text-container">
+        <div className="row">
+          <div className="two columns header-col">
+            <h1>
+              <span>Client Testimonials</span>
+            </h1>
+          </div>
+
+          <div className="ten columns flex-container">
+            <ul className="slides">{testimonials}</ul>
           </div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
 }
 
 export default Testimonials;

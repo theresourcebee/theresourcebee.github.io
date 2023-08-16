@@ -1,57 +1,30 @@
-import React, { Component } from "react";
-// import ReactGA from "react-ga";
-import $ from "jquery";
+import React, { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ReactGA from "react-ga";
 import "./App.css";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
-import About from "./Components/About";
-import Homepage from "./Components/Homepage";
-import Contact from "./Components/Contact";
-import Portfolio from "./Components/Portfolio";
+import Home from "./pages/Home";
+import ProductPage from "./pages/ProductPage"
+import ContactPage from "./pages/ContactPage"
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      foo: "bar",
-      resumeData: {}
-    };
+function App() {
 
-    // ReactGA.initialize("UA-110570651-1");
-    // ReactGA.pageview(window.location.pathname);
-  }
+  useEffect(() => {
+    ReactGA.initialize("G-WHH4ERC3P4");
+    ReactGA.pageview(window.location.pathname);
+  }, []);
 
-  getResumeData() {
-    $.ajax({
-      url: "./resumeData.json",
-      dataType: "json",
-      cache: false,
-      success: function (data) {
-        this.setState({ resumeData: data });
-      }.bind(this),
-      error: function (xhr, status, err) {
-        console.log(err);
-        alert(err);
-      }
-    });
-  }
-
-  componentDidMount() {
-    this.getResumeData();
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Header data={this.state.resumeData.main} />
-        <About data={this.state.resumeData.main} />
-        <Homepage data={this.state.resumeData.resume} />
-        <Portfolio data={this.state.resumeData.portfolio} />
-        <Contact data={this.state.resumeData.main} />
-        <Footer data={this.state.resumeData.main} />
-      </div>
-    );
-  }
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route index element={<Home />} />
+          <Route path="products/:id" element={<ProductPage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="*" element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

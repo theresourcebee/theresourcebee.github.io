@@ -1,15 +1,19 @@
 import React, { useState } from "react";
+import { appData as initialAppData } from "../data/appData";
 
 function Contact(props) {
+  // eslint-disable-next-line
+  const [appData, setAppData] = useState(initialAppData);
+
   const [contactName, setContactName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [emailBody, setEmailBody] = useState("");
 
-  const message = props.data?.address?.contactmessage || "Let us know how we can help and someone from our team will get in touch with you";
-  const city = props.data?.address?.city;
-  const state = props.data?.address?.state;
-  const name = props.data?.name;
+  const message = appData.main.address.contactmessage || "Let us know how we can help and someone from our team will get in touch with you";
+  const city = appData.main.address.city;
+  const state = appData.main.address.state;
+  const name = appData.main.name;
 
   const sendEmail = () => {
     window.open(`mailto:${email}?subject=${subject}&body=${contactName}\n${emailBody}`)

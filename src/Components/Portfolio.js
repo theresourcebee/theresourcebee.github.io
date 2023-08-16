@@ -1,41 +1,40 @@
-import React, { Component } from "react";
-import Zmage from "react-zmage";
+import React, { useState } from "react";
+import { appData as initialAppData } from "../data/appData";
 
 let id = 0;
-class Portfolio extends Component {
-  render() {
-    if (!this.props.data) return null;
+function Portfolio(props) {
+  // eslint-disable-next-line
+  const [appData, setAppData] = useState(initialAppData);
 
-    const projects = this.props.data.projects.map(function (projects) {
-      let projectImage = "images/portfolio/" + projects.image;
-
-      return (
-        <div key={id++} className="columns portfolio-item">
-          <div className="item-wrap">
-            <img alt={projects.title} src={projectImage} />
-            <div style={{ textAlign: "center" }}>{projects.title}</div>
-          </div>
-        </div>
-      );
-    });
+  const projects = appData.portfolio.projects.map(function (project) {
+    let projectImage = "images/portfolio/" + project.image;
 
     return (
-      <section id="portfolio">
-        <div className="row">
-          <div className="twelve columns collapsed">
-            <h1>Check Out Some of My Works.</h1>
+      <div key={id++} className="columns portfolio-item">
+        <div className="item-wrap">
+          <img alt={project.title} src={projectImage} />
+          <div style={{ textAlign: "center" }}>{project.title}</div>
+        </div>
+      </div>
+    );
+  });
 
-            <div
-              id="portfolio-wrapper"
-              className="bgrid-quarters s-bgrid-thirds cf"
-            >
-              {projects}
-            </div>
+  return (
+    <section id="portfolio">
+      <div className="row">
+        <div className="twelve columns collapsed">
+          <h1>Check Out Some of our apps.</h1>
+
+          <div
+            id="portfolio-wrapper"
+            className="bgrid-quarters s-bgrid-thirds cf"
+          >
+            {projects}
           </div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
 }
 
 export default Portfolio;

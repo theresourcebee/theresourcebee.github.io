@@ -1,60 +1,59 @@
-import React, { Component } from "react";
-import ParticlesBg from "particles-bg";
+import React, { useState } from 'react';
+import ParticlesBg from 'particles-bg';
+import { appData as initialAppData } from "../data/appData";
 
-class Header extends Component {
-  render() {
-    if (!this.props.data) return null;
+function Header(props) {
+  // eslint-disable-next-line
+  const [appData, setAppData] = useState(initialAppData);
+  const { name, description } = appData.main || {};
+  const showCarousel = props.showCarousel;
 
-    // const project = this.props.data.project;
-    // const github = this.props.data.github;
-    const name = this.props.data.name;
-    const description = this.props.data.description;
+  return (
+    <header id="home">
+      <ParticlesBg type="circle" bg={true} />
 
-    return (
-      <header id="home">
-        <ParticlesBg type="circle" bg={true} />
+      <nav id="nav-wrap">
+        <a className="mobile-btn" href="#nav-wrap" title="Show navigation">
+          Show navigation
+        </a>
+        <a className="mobile-btn" href="#home" title="Hide navigation">
+          Hide navigation
+        </a>
 
-        <nav id="nav-wrap">
-          <a className="mobile-btn" href="#nav-wrap" title="Show navigation">
-            Show navigation
-          </a>
-          <a className="mobile-btn" href="#home" title="Hide navigation">
-            Hide navigation
-          </a>
+        <ul id="nav" className="nav">
+          <li className="current">
+            <a className="smoothscroll" href="#home">
+              Home
+            </a>
+          </li>
 
-          <ul id="nav" className="nav">
-            <li className="current">
-              <a className="smoothscroll" href="#home">
-                Home
-              </a>
-            </li>
+          <li>
+            <a className="smoothscroll" href="#about">
+              About
+            </a>
+          </li>
 
-            <li>
-              <a className="smoothscroll" href="#about">
-                About
-              </a>
-            </li>
+          <li>
+            <a className="smoothscroll" href="#services">
+              Services
+            </a>
+          </li>
 
-            <li>
-              <a className="smoothscroll" href="#services">
-                Services
-              </a>
-            </li>
+          <li>
+            <a className="smoothscroll" href="#portfolio">
+              Portfolio
+            </a>
+          </li>
 
-            <li>
-              <a className="smoothscroll" href="#portfolio">
-                Portfolio
-              </a>
-            </li>
+          <li>
+            <a className="smoothscroll" href="#contact">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-            <li>
-              <a className="smoothscroll" href="#contact">
-                Contact
-              </a>
-            </li>
-          </ul>
-        </nav>
-
+      {showCarousel && (
         <div className="row banner">
           <div className="banner-text">
             <h1 className="responsive-headline">{name}</h1>
@@ -70,15 +69,17 @@ class Header extends Component {
             </ul> */}
           </div>
         </div>
+      )}
 
+      {showCarousel && (
         <p className="scrolldown">
           <a className="smoothscroll" href="#about">
             <i className="icon-down-circle"></i>
           </a>
         </p>
-      </header>
-    );
-  }
+      )}
+    </header>
+  );
 }
 
 export default Header;
