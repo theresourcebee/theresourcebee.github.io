@@ -798,7 +798,7 @@ select {
    font-size: 15px;
    line-height: 24px;
    color: #647373;
-   background: #D3D9D9;
+   background: #fff;
 
 }
 
@@ -811,7 +811,7 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
    color: #B3B7BC;
-   background-color: #3d4145;
+   background-color: #fff;
 }
 
 textarea {
