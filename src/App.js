@@ -5,6 +5,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import ProductPage from "./pages/ProductPage"
 import ContactPage from "./pages/ContactPage"
+import AppAdsFile from "./pages/AppAdsFile"
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="products/:id" element={<ProductPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="app-ads.txt" element={<AppAdsFile />} />
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>
